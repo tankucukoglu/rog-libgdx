@@ -7,8 +7,6 @@ import com.badlogic.gdx.InputAdapter;
 import reignofgods.util.Constants;
 
 public class WorldController extends InputAdapter{
-
-    private static final String TAG = WorldController.class.getName();
     
     private boolean moving = false;
     
@@ -69,6 +67,9 @@ public class WorldController extends InputAdapter{
     
     public void setDirection(int direction) {
         this.direction = direction;
+    }
+    public void setMoving(boolean moving) {
+        this.moving = moving;
     }
     public int getDirection() {
         return direction;
