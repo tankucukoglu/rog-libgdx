@@ -4,7 +4,7 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 
-public class Game extends ApplicationAdapter{
+public class Game extends ApplicationAdapter {
         
     private WorldController worldController;
     private WorldRenderer worldRenderer;

@@ -70,10 +70,10 @@ public class Player {
             walkFramesLeft[index++] = tmp[3][i];
         }
         
-        walkAnimationUp = new Animation(Constants.WALK_SPEED, walkFramesUp);
-        walkAnimationRight = new Animation(Constants.WALK_SPEED, walkFramesRight);
-        walkAnimationDown = new Animation(Constants.WALK_SPEED, walkFramesDown);
-        walkAnimationLeft = new Animation(Constants.WALK_SPEED, walkFramesLeft);
+        walkAnimationUp = new Animation(Constants.ANIMATION_SPEED, walkFramesUp);
+        walkAnimationRight = new Animation(Constants.ANIMATION_SPEED, walkFramesRight);
+        walkAnimationDown = new Animation(Constants.ANIMATION_SPEED, walkFramesDown);
+        walkAnimationLeft = new Animation(Constants.ANIMATION_SPEED, walkFramesLeft);
         
         batch = new SpriteBatch();
         
@@ -184,7 +184,7 @@ public class Player {
         this.prevDirection = prevDirection;
     }
     public void setX(float x) {
-        this.x  = x;
+        this.x = x;
     }
     public void setY(float y) {
         this.y = y;

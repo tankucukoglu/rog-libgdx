@@ -8,8 +8,8 @@ public class Constants {
     public static final int DOWN = 3;
     public static final int IDLE = -1;
         
-    public static final float CAMERA_SPEED = 0.1f;
-    public static final float WALK_SPEED = 0.21f;
+    public static final float PLAYER_SPEED = 0.1f;
+    public static final float ANIMATION_SPEED = 0.21f;
     
     public static final int WINDOW_WIDTH = 640;
     public static final int WINDOW_HEIGHT = 480;

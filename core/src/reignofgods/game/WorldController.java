@@ -1,4 +1,3 @@
-
 package reignofgods.game;
 
 import com.badlogic.gdx.Gdx;
@@ -6,50 +5,57 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputAdapter;
 import reignofgods.util.Constants;
 
-public class WorldController extends InputAdapter{
+public class WorldController extends InputAdapter {
     
-    private boolean moving = false;
+    private boolean moving;
+    private boolean targetReached;
+    private boolean playerMovement;
     
-    private int direction = -1;
+    private int direction = Constants.IDLE;
     
-
     public WorldController() {
         init();
     }
-
     private void init() {
+        moving = false;
+        targetReached = true;
+        playerMovement = true;
         Gdx.input.setInputProcessor(this);
     }
-
     public void update(float deltaTime) {
         
     }
     
     @Override
     public boolean keyDown(int keycode) {
-        if(keycode == Input.Keys.LEFT) {
+        if(keycode == Input.Keys.LEFT && targetReached) {
             direction = Constants.LEFT;
             moving = true;
         }
-            
-        if(keycode == Input.Keys.RIGHT) {
+        if(keycode == Input.Keys.RIGHT && targetReached) {
             direction = Constants.RIGHT;
             moving = true;
         }
-            
-        if(keycode == Input.Keys.UP) {
+        if(keycode == Input.Keys.UP && targetReached) {
             direction = Constants.UP;
             moving = true;
         }
-            
-        if(keycode == Input.Keys.DOWN) {
+        if(keycode == Input.Keys.DOWN && targetReached) {
             direction = Constants.DOWN;
             moving = true;
         }
-            
+//        if(keycode == Input.Keys.SPACE) {
+//            
+//            if(playerMovement) {
+//                playerMovement = false;
+//            }
+//            else {
+//                playerMovement = true;
+//            }
+//        }
+        
         return false;
     }
-
     @Override
     public boolean keyUp(int keycode) {
         
@@ -71,10 +77,16 @@ public class WorldController extends InputAdapter{
     public void setMoving(boolean moving) {
         this.moving = moving;
     }
+    public void setTargetReached(boolean targetReached) {
+        this.targetReached = targetReached;
+    }
     public int getDirection() {
         return direction;
     }
     public boolean getMoving() {
         return moving;
+    }
+    public boolean getPlayerMovement() {
+        return playerMovement;
     }
 }
